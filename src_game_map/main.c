@@ -10,9 +10,6 @@
 int main(void)
 {
     sfEvent event;
-
-    //display_window(event);
-
     my_rpg *rpg = malloc (sizeof(my_rpg));
     menu(rpg);
     return 0;

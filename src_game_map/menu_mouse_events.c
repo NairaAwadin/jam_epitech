@@ -4,18 +4,18 @@
 ** File description:
 ** menu_mouse_events
 */
-
+#include <stdio.h>
 #include "my.h"
 
-/*void button_event(my_rpg *rpg, my_box *box, sfRenderWindow* window)
+void button_event(my_rpg *rpg, sfRenderWindow* window)
 {
     if (rpg->event.type == sfEvtMouseButtonPressed) {
-        rpg->click_button_setting =
+     /*   rpg->click_button_setting =
         sfSprite_getGlobalBounds(rpg->button_setting);
         if (sfFloatRect_contains(&rpg->click_button_setting,
         rpg->event.mouseButton.x, rpg->event.mouseButton.y)) {
             open_setting_menu(rpg, box, window);
-        }
+        }*/
         rpg->click_button_exit = sfSprite_getGlobalBounds(rpg->button_exit);
         if (sfFloatRect_contains(&rpg->click_button_exit,
         rpg->event.mouseButton.x, rpg->event.mouseButton.y)) {
@@ -24,10 +24,10 @@
         rpg->click_button_play = sfSprite_getGlobalBounds(rpg->button_play);
         if (sfFloatRect_contains(&rpg->click_button_play,
         rpg->event.mouseButton.x, rpg->event.mouseButton.y)) {
-            play_intro(rpg, box, window);
+            display_window(rpg->event);
         }
     }
-}*/
+}
 
 void menu_mouse_event(my_rpg *rpg, sfRenderWindow* window)
 {
@@ -37,6 +37,7 @@ void menu_mouse_event(my_rpg *rpg, sfRenderWindow* window)
         if (rpg->event.type == sfEvtClosed) {
             sfRenderWindow_close(window);
         }
-        //button_event(rpg, box, window);
+        sfRenderWindow_clear(window, sfBlack);
+        button_event(rpg, window);
     }
 }

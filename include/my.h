@@ -17,6 +17,9 @@ typedef struct my_rpg_s {
 
     sfTexture* text_button_play;
     sfSprite* button_play;
+    sfText* text_game;
+    sfFloatRect click_button_exit;
+    sfFloatRect click_button_play;
 
     sfTexture* text_button_setting;
     sfSprite* button_setting;
@@ -36,4 +39,5 @@ typedef struct my_rpg_s {
 void menu(my_rpg *rpg);
 void loading_menu_sprite(my_rpg *rpg);
 void menu_mouse_event(my_rpg *rpg, sfRenderWindow* window);
+int display_window(sfEvent event);
 #endif

@@ -59,7 +59,6 @@ int while_for_display(sfRenderWindow *w, sfEvent event, sfView *v, anime_t *a)
             sfRenderWindow_close(w);
         }
         if (event.type == sfEvtKeyReleased) {
-            printf("yes\n");
             return 1;
         }
         cond_key_l_r(event, v, a);

@@ -20,6 +20,7 @@ void principale_loop_menu(my_rpg *rpg, sfRenderWindow* window)
         }
         sfRenderWindow_drawSprite(window, rpg->sprites[currentSprite], NULL);
         sfSleep(sfMilliseconds(130));
+        sfRenderWindow_drawText(window, rpg->text_game, NULL);
         sfRenderWindow_drawSprite(window, rpg->button_play, NULL);
         sfRenderWindow_drawSprite(window, rpg->button_setting, NULL);
         sfRenderWindow_drawSprite(window, rpg->button_exit, NULL);
@@ -38,6 +39,5 @@ void menu(my_rpg *rpg)
     sfResize | sfClose, NULL);
 
     loading_menu_sprite(rpg);
-
     principale_loop_menu(rpg, window);
 }

@@ -30,6 +30,13 @@ void loading_menu_button(my_rpg *rpg)
     sfSprite_setScale(rpg->button_setting, (sfVector2f){0.7f, 0.7f});
     sfSprite_setScale(rpg->button_exit, (sfVector2f){0.7f, 0.7f});
     sfSprite_setScale(rpg->button_credits, (sfVector2f){0.7f, 0.7f});
+    rpg->text_game = sfText_create();
+    sfFont* font = sfFont_createFromFile("assets/Macaroni.ttf");
+    sfText_setFont(rpg->text_game, font);
+    sfText_setString(rpg->text_game, "Where is Hoppy ?");
+    sfText_setCharacterSize(rpg->text_game, 80);
+    sfText_setColor(rpg->text_game, sfBlack);
+    sfText_setPosition(rpg->text_game, (sfVector2f) {760, 90});
 }
 
 void loading_menu_sprite(my_rpg *rpg)
