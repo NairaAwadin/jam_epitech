@@ -29,6 +29,11 @@ typedef struct my_rpg_s {
 
     sfSprite* sprites[31];
 
+    sfEvent event;
+
 }my_rpg;
 
+void menu(my_rpg *rpg);
+void loading_menu_sprite(my_rpg *rpg);
+void menu_mouse_event(my_rpg *rpg, sfRenderWindow* window);
 #endif

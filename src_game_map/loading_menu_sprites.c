@@ -9,24 +9,24 @@
 
 void loading_menu_button(my_rpg *rpg)
 {
-    rpg->text_button_play = sfTexture_createFromFile("assets/play_butt.png", NULL);
+    rpg->text_button_play = sfTexture_createFromFile("assets/play_butjam.png", NULL);
     rpg->button_play = sfSprite_create();
-    rpg->text_button_setting = sfTexture_createFromFile("assets/setting_button.png",NULL);
+    rpg->text_button_setting = sfTexture_createFromFile("assets/sett_butjam.png",NULL);
     rpg->button_setting = sfSprite_create();
-    rpg->text_button_exit = sfTexture_createFromFile("assets/exit_butt.png", NULL);
+    rpg->text_button_exit = sfTexture_createFromFile("assets/exit_butjam.png", NULL);
     rpg->button_exit = sfSprite_create();
-    rpg->text_button_credits = sfTexture_createFromFile("assets/exit_butt.png", NULL);
+    rpg->text_button_credits = sfTexture_createFromFile("assets/credits_butjam.png", NULL);
     rpg->button_credits = sfSprite_create();
 
     sfSprite_setTexture(rpg->button_play, rpg->text_button_play, sfTrue);
-    sfSprite_setPosition(rpg->button_play, (sfVector2f){800, 320});
+    sfSprite_setPosition(rpg->button_play, (sfVector2f){800, 700});
     sfSprite_setTexture(rpg->button_setting, rpg->text_button_setting, sfTrue);
-    sfSprite_setPosition(rpg->button_setting, (sfVector2f){800, 470});
+    sfSprite_setPosition(rpg->button_setting, (sfVector2f){1700, -15});
     sfSprite_setTexture(rpg->button_exit, rpg->text_button_exit, sfTrue);
-    sfSprite_setPosition(rpg->button_exit, (sfVector2f){795, 600});
+    sfSprite_setPosition(rpg->button_exit, (sfVector2f){10, -10});
     sfSprite_setTexture(rpg->button_credits, rpg->text_button_credits, sfTrue);
-    sfSprite_setPosition(rpg->button_credits, (sfVector2f){795, 600});
-    sfSprite_setScale(rpg->button_play, (sfVector2f){0.7f, 0.7f});
+    sfSprite_setPosition(rpg->button_credits, (sfVector2f){10, 925});
+    sfSprite_setScale(rpg->button_play, (sfVector2f){0.9f, 0.9f});
     sfSprite_setScale(rpg->button_setting, (sfVector2f){0.7f, 0.7f});
     sfSprite_setScale(rpg->button_exit, (sfVector2f){0.7f, 0.7f});
     sfSprite_setScale(rpg->button_credits, (sfVector2f){0.7f, 0.7f});
@@ -53,7 +53,7 @@ void loading_menu_sprite(my_rpg *rpg)
     sfTexture* texture13 = sfTexture_createFromFile("assets/frame-13.gif", NULL);
     sfTexture* texture14 = sfTexture_createFromFile("assets/frame-14.gif", NULL);
     sfTexture* texture15 = sfTexture_createFromFile("assets/frame-15.gif", NULL);
-    sfTexture* texture16 = sfTexture_createFromFile("asssets/frame-16.gif", NULL);
+    sfTexture* texture16 = sfTexture_createFromFile("assets/frame-16.gif", NULL);
     sfTexture* texture17 = sfTexture_createFromFile("assets/frame-17.gif", NULL);
     sfTexture* texture18 = sfTexture_createFromFile("assets/frame-18.gif", NULL);
     sfTexture* texture19 = sfTexture_createFromFile("assets/frame-19.gif", NULL);
