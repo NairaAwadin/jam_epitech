@@ -2,33 +2,39 @@
 ## EPITECH PROJECT, 2023
 ## Makefile
 ## File description:
-## Makefile
+## jam3
 ##
 
-CC ?= gcc
+CC      =       gcc
 
-SRC =	main.c 		\
+SRC     =       src_game_map/display_wind.c     \
+                src_game_map/perso.c    \
+                src_game_map/collision.c        \
+                src_game_map/initialisation.c   \
+                src_game_map/split_while_poll_event.c   \
+                src_game_map/main.c
 
-OBJ =	$(SRC:.c=.o)
+OBJ     =       $(SRC:.c=.o)
 
-CPPFLAGS += -iquote./include
+NAME    =       my_rpg
 
-CFLAGS += -Wall -Wextra
+CPPFLAGS = -I./include/ -g
 
-NAME = jam
+CFLAGS = -lcsfml-graphics -lcsfml-window -lcsfml-audio -lcsfml-system -lncurses
 
-all:	$(NAME)
+CFLAG = -Wall -Wextra
 
-$(NAME):	$(OBJ)
-	$(CC) -o $(NAME) $(OBJ)
+all:$(NAME)
+
+$(NAME):        $(OBJ)
+	gcc -o $(NAME) $(OBJ) $(CFLAGS) $(CFLAG)
+
+debug:  all
 
 clean:
-	$(RM) -f $(OBJ)
-	$(RM) -f *~
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-
-.PHONY: all clean fclean re
