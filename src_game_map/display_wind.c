@@ -25,6 +25,8 @@ int disp_split(sfRenderWindow *w, maps_t *map, anime_t *ani, sfView *view, int t
     sfRenderWindow_clear(w, sfWhite);
     sfRenderWindow_setView(w, view);
     sfRenderWindow_drawSprite(w, map->sprite_sous_map, NULL);
+    if (test == 2)
+        exit(0);
     if (test == 1) {
         sfSprite_setTextureRect(ani->sprite_sans, ani->rect);
         sfSprite_setPosition(ani->sprite_sans, ani->pos);
@@ -64,6 +66,9 @@ int display_window(sfEvent event)
     while (sfRenderWindow_isOpen(window)) {
         if (while_for_display(window, event, view, animation) == 1) {
             test = 1;
+        }
+        if (while_for_display(window, event, view, animation) == 2) {
+            test = 2;
         }
         disp_split(window, maps, animation, view, test);
     }
