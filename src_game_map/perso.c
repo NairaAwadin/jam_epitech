@@ -13,10 +13,10 @@ anime_t *sprite_animation_d(anime_t *animation, sfRenderWindow *window)
     float dt = sfTime_asSeconds(elapsed);
 
     (animation->rect).top = 0;
-    (animation->rect).width = 105;
+    (animation->rect).width = 110;
     if (dt > 0.15) {
-        animation->rect.left += 105;
-        if (animation->rect.left >= 420) {
+        animation->rect.left += 110;
+        if (animation->rect.left >= 250) {
             animation->rect.left = 0;
         }
         sfClock_restart(animation->clock);
@@ -33,11 +33,11 @@ anime_t *sprite_animation_r(anime_t *animation, sfRenderWindow *window)
     sfTime elapsed = sfClock_getElapsedTime(animation->clock);
     float dt = sfTime_asSeconds(elapsed);
 
-    (animation->rect).top = 135;
-    (animation->rect).width = 78;
+    (animation->rect).top = 165;
+    (animation->rect).width = 115;
     if (dt > 0.15) {
-        animation->rect.left += 78;
-        if (animation->rect.left >= 312) {
+        animation->rect.left += 115;
+        if (animation->rect.left >= 200) {
             animation->rect.left = 0;
         }
         sfClock_restart(animation->clock);
@@ -54,11 +54,11 @@ anime_t *sprite_animation_l(anime_t *animation, sfRenderWindow *window)
     sfTime elapsed = sfClock_getElapsedTime(animation->clock);
     float dt = sfTime_asSeconds(elapsed);
 
-    (animation->rect).top = 270;
-    (animation->rect).width = 80;
+    (animation->rect).top = 300;
+    (animation->rect).width = 121;
     if (dt > 0.15) {
-        animation->rect.left += 80;
-        if (animation->rect.left >= 320) {
+        animation->rect.left += 121;
+        if (animation->rect.left >= 190) {
             animation->rect.left = 0;
         }
         sfClock_restart(animation->clock);
@@ -75,13 +75,12 @@ anime_t *sprite_animation_u(anime_t *animation, sfRenderWindow *window)
     sfTime elapsed = sfClock_getElapsedTime(animation->clock);
     float dt = sfTime_asSeconds(elapsed);
 
-    (animation->rect).top = 0;
-    (animation->rect).width = 105;
-    (animation->rect).left = 443;
+    (animation->rect).top = 400;
+    (animation->rect).width = 135;
     if (dt > 0.15) {
-        animation->rect.left += 105;
-        if (animation->rect.left >= 862) {
-            animation->rect.left = 443;
+        animation->rect.left += 135;
+        if (animation->rect.left >= 150) {
+            animation->rect.left = 0;
         }
         sfClock_restart(animation->clock);
     }

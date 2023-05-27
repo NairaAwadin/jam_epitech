@@ -12,7 +12,7 @@ anime_t *init_anime(void)
 
     anim->clock = sfClock_create();
     anim->sprite_sans = sfSprite_create();
-    anim->texture_sans = sfTexture_createFromFile("sans.png", NULL);
+    anim->texture_sans = sfTexture_createFromFile("assets/main_perso.png", NULL);
     (anim->rect).top = 0;
     (anim->rect).left = 0;
     (anim->rect).width = 105;
