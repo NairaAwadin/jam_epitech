@@ -12,6 +12,7 @@ SRC     =       src_game_map/display_wind.c     \
                 src_game_map/collision.c        \
                 src_game_map/initialisation.c   \
                 src_game_map/split_while_poll_event.c   \
+                src_game_map/loading_menu_sprites.c \
                 src_game_map/main.c
 
 OBJ     =       $(SRC:.c=.o)
