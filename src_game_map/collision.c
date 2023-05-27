@@ -9,7 +9,7 @@
 int handle_collision(long unsigned int x, long unsigned int y)
 {
     sfEvent event;
-    sfImage *image = sfImage_createFromFile("assets/map_jam.png");
+    sfImage *image = sfImage_createFromFile("assets/sous_map.png");
     sfColor color = sfImage_getPixel(image, x, y);
 
     if (color.r == 255 && color.b == 255 && color.g == 255) {

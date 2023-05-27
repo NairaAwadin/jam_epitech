@@ -20,12 +20,18 @@ int all_set(maps_t *maps, anime_t *anim, sfView *view)
     return 0;
 }
 
-int disp_split(sfRenderWindow *w, maps_t *map, anime_t *ani, sfView *view)
+int disp_split(sfRenderWindow *w, maps_t *map, anime_t *ani, sfView *view, int test)
 {
     sfRenderWindow_clear(w, sfWhite);
     sfRenderWindow_setView(w, view);
     sfRenderWindow_drawSprite(w, map->sprite_sous_map, NULL);
-    //sfRenderWindow_drawSprite(w, map->sprite, NULL);
+    if (test == 1) {
+        sfSprite_setTextureRect(ani->sprite_sans, ani->rect);
+        sfSprite_setPosition(ani->sprite_sans, ani->pos);
+        sfSprite_setScale(ani->sprite_sans, ani->scale);
+        sfRenderWindow_drawSprite(w, ani->sprite_sans, NULL);
+    }
+    sfRenderWindow_drawSprite(w, map->sprite, NULL);
     animation_on_key(ani, w);
     sfRenderWindow_display(w);
     return 0;
@@ -49,14 +55,17 @@ int display_window(sfEvent event)
     window = sfRenderWindow_create(mode, "...", sfResize | sfClose, NULL);
     anime_t *animation = NULL;
     maps_t *maps = NULL;
+    int test = 0;
     sfView *view = sfView_create();
 
     animation = init_anime();
     maps = init_maps_s();
     all_set(maps, animation, view);
     while (sfRenderWindow_isOpen(window)) {
-        while_for_display(window, event, view, animation);
-        disp_split(window, maps, animation, view);
+        if (while_for_display(window, event, view, animation) == 1) {
+            test = 1;
+        }
+        disp_split(window, maps, animation, view, test);
     }
     free_destroy(window, maps, animation);
     return 0;
