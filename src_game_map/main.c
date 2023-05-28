@@ -7,11 +7,13 @@
 #include "my_map.h"
 #include "my.h"
 
-int main(void)
+int main(int ac, char **av)
 {
-    sfEvent event;
-
     my_rpg *rpg = malloc (sizeof(my_rpg));
-    menu(rpg);
+   if (ac == 1)
+        menu(rpg);
+    if (ac == 2)
+        instructions(ac, av);
+    free(rpg);
     return 0;
 }

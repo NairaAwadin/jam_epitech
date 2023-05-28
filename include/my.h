@@ -77,4 +77,5 @@ void sd_menu(my_rpg *rpg, sfRenderWindow* window);
 int display_window(my_rpg *rpg, sfRenderWindow *window);
 int open_setting_menu(my_rpg *rpg, sfRenderWindow* window);
 int open_credits_menu(my_rpg *rpg, sfRenderWindow* window);
+int instructions(int ac, char **av);
 #endif
