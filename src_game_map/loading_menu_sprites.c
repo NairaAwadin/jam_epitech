@@ -61,10 +61,6 @@ sfRectangleShape_setPosition(rpg->rect_c, (sfVector2f){42, 950});
 
 void loading_menu_sprite(my_rpg *rpg)
 {
-    /*rpg->music = sfMusic_createFromFile("assets/music.ogg");
-    sfMusic_setLoop(rpg->music, sfTrue);
-    sfMusic_play(rpg->music);*/
-
     sfTexture* texture1 = sfTexture_createFromFile("assets/frame-01.gif", NULL);
     sfTexture* texture2 = sfTexture_createFromFile("assets/frame-02.gif", NULL);
     sfTexture* texture3 = sfTexture_createFromFile("assets/frame-03.gif", NULL);

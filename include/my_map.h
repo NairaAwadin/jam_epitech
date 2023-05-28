@@ -31,6 +31,7 @@ typedef struct anime_s {
     sfSprite *sprite_sans;
     sfTexture *texture_sans;
     sfClock *clock;
+    sfVector2f pos_timer;
 } anime_t;
 
 typedef struct maps_s {

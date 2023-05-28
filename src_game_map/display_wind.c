@@ -44,7 +44,9 @@ int disp_split(sfRenderWindow *w, maps_t *map, anime_t *ani, sfView *view, int t
     sfTime elapsedTime = sfClock_getElapsedTime(rpg->clock_timer);
     float seconds = sfTime_asSeconds(elapsedTime);
     char timeString[50];
-    sprintf(timeString, "Temps écoulé : %.2f secondes", seconds);
+    sprintf(timeString, "Temps : %.2f secondes", seconds);
+    sfText_setPosition(rpg->text_timer, ani->pos_timer);
+    sfText_setScale(rpg->text_timer, (sfVector2f) {0.5, 0.5});
     sfText_setString(rpg->text_timer, timeString);
     sfRenderWindow_drawText(w, rpg->text_timer, NULL);
     if (sfTime_asSeconds(elapsedTime) >= sfTime_asSeconds(rpg->timer)) {
@@ -77,7 +79,7 @@ int display_window(my_rpg *rpg, sfRenderWindow *window)
     maps = init_maps_s();
     all_set(maps, animation, view);
     rpg->clock_timer = sfClock_create();
-    rpg->timer = sfSeconds(15);
+    rpg->timer = sfSeconds(60);
     rpg->font_timer = sfFont_createFromFile("assets/Macaroni.ttf");
     while (sfRenderWindow_isOpen(window)) {
         if (while_for_display(window, rpg->event, view, animation) == 1) {

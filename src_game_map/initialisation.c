@@ -23,6 +23,8 @@ anime_t *init_anime(void)
     (anim->scale).y = 0.4;
     (anim->mouv).x = 7;
     (anim->mouv).y = 2;
+    anim->pos_timer.x = 200;
+    anim->pos_timer.y =	400;
     sfSprite_setTextureRect(anim->sprite_sans, anim->rect);
     sfSprite_setTexture(anim->sprite_sans, anim->texture_sans, sfTrue);
     return anim;

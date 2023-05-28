@@ -22,6 +22,7 @@ void cond_key_l_r(sfEvent event, sfView *view, anime_t *anim)
         if (handle_collision(cat.x + 7, cat.y + - 2) == 2)
             exit(0);
         sfView_move(view, move_r);
+        anim->pos_timer.x += 3;
         anim->pos.x += 3;
     }
     if (event.key.code == sfKeyLeft) {
@@ -34,6 +35,7 @@ void cond_key_l_r(sfEvent event, sfView *view, anime_t *anim)
         if (handle_collision(cat.x, cat.y - 2) == 2)
             exit(0);
         sfView_move(view, move_l);
+        anim->pos_timer.x -= 3;
         anim->pos.x -= 3;
     }
 }
@@ -54,6 +56,7 @@ void cond_key_u_d(sfEvent event, sfView *view, anime_t *anim)
         if (handle_collision(cat.x, cat.y) == 2)
             exit(0);
         sfView_move(view, move_u);
+        anim->pos_timer.y -=3;
         anim->pos.y -= 3;
     }
     if (event.key.code == sfKeyDown) {
@@ -66,6 +69,7 @@ void cond_key_u_d(sfEvent event, sfView *view, anime_t *anim)
         if (handle_collision(cat.x + 2, cat.y + 3) == 2)
             exit(0);
         sfView_move(view, move_d);
+        anim->pos_timer.y += 3;
         anim->pos.y += 3;
     }
 }
