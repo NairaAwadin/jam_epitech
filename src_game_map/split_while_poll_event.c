@@ -57,9 +57,9 @@ void cond_key_u_d(sfEvent event, sfView *view, anime_t *anim)
         anim->pos.y -= 3;
     }
     if (event.key.code == sfKeyDown) {
-        if (handle_collision(cat.x, cat.y + 3) == 0)
+        if (handle_collision(cat.x + 5, cat.y + 13) == 0)
             return;
-        if (handle_collision(cat.x + 2, cat.y + 3) == 0)
+        if (handle_collision(cat.x + 5, cat.y + 13) == 0)
             return;
         if (handle_collision(cat.x, cat.y + 3) == 2)
             exit(0);
