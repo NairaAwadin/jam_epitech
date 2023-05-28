@@ -37,6 +37,11 @@ maps_t *init_maps_s(void)
     (maps->scale).x = 1.0;
     (maps->scale).y = 1.05;
     maps->sprite = sfSprite_create();
+    maps->texture_hoppy = sfTexture_createFromFile("assets/hoppy.png", NULL);
+    maps->sprite_hoppy = sfSprite_create();
+    sfSprite_setTexture(maps->sprite_hoppy, maps->texture_hoppy, sfTrue);
+    sfSprite_setPosition(maps->sprite_hoppy, (sfVector2f){250, 100});
+    sfSprite_setScale(maps->sprite_hoppy, (sfVector2f){0.08f, 0.08f});
     maps->texture = sfTexture_createFromFile("assets/map_jam.png", NULL);
     (maps->center).x = 410;
     (maps->center).y = 540;

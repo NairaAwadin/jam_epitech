@@ -42,6 +42,9 @@ typedef struct maps_s {
     sfVector2f center;
     sfVector2f size;
     sfVector2f size_map;
+    sfVector2f scale_hoppy;
+    sfTexture* texture_hoppy;
+    sfSprite* sprite_hoppy;
 }maps_t;
 
 int handle_collision(long unsigned int x, long unsigned int y);
