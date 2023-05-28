@@ -39,6 +39,26 @@ void loading_menu_button(my_rpg *rpg)
     sfText_setPosition(rpg->text_game, (sfVector2f) {760, 90});
 }
 
+void loading_menu_rect(my_rpg *rpg)
+{
+rpg->rect_p = sfRectangleShape_create();
+sfRectangleShape_setSize(rpg->rect_p, (sfVector2f){200, 65});
+sfRectangleShape_setFillColor(rpg->rect_p, sfColor_fromRGBA(255, 255, 255, 128));
+sfRectangleShape_setPosition(rpg->rect_p, (sfVector2f){834, 740});
+rpg->rect_s = sfRectangleShape_create();
+sfRectangleShape_setSize(rpg->rect_s, (sfVector2f){150, 45});
+sfRectangleShape_setFillColor(rpg->rect_s, sfColor_fromRGBA(255, 255, 255, 128));
+sfRectangleShape_setPosition(rpg->rect_s, (sfVector2f){1738, 25});
+rpg->rect_e = sfRectangleShape_create();
+sfRectangleShape_setSize(rpg->rect_e, (sfVector2f){150, 45});
+sfRectangleShape_setFillColor(rpg->rect_e, sfColor_fromRGBA(255, 255, 255, 128));
+sfRectangleShape_setPosition(rpg->rect_e, (sfVector2f){42, 20});
+rpg->rect_c = sfRectangleShape_create();
+sfRectangleShape_setSize(rpg->rect_c, (sfVector2f){150, 50});
+sfRectangleShape_setFillColor(rpg->rect_c, sfColor_fromRGBA(255, 255, 255, 128));
+sfRectangleShape_setPosition(rpg->rect_c, (sfVector2f){42, 950});
+}
+
 void loading_menu_sprite(my_rpg *rpg)
 {
     /*rpg->music = sfMusic_createFromFile("wondrous-waters-119518.ogg");
@@ -116,4 +136,5 @@ void loading_menu_sprite(my_rpg *rpg)
     sfSprite_setTexture(rpg->sprites[30], texture31, sfTrue);
 
     loading_menu_button(rpg);
+    loading_menu_rect(rpg);
 }

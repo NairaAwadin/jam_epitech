@@ -15,20 +15,25 @@ typedef struct my_rpg_s {
     //sfTexture* texture;
     //sfSprite* sprite;
 
-    sfTexture* text_button_play;
-    sfSprite* button_play;
     sfText* text_game;
     sfFloatRect click_button_exit;
     sfFloatRect click_button_play;
 
+    sfTexture* text_button_play;
+    sfSprite* button_play;
+    sfRectangleShape* rect_p;
+
     sfTexture* text_button_setting;
     sfSprite* button_setting;
+    sfRectangleShape* rect_s;
 
     sfTexture* text_button_exit;
     sfSprite* button_exit;
+    sfRectangleShape* rect_e;
 
     sfTexture* text_button_credits;
     sfSprite* button_credits;
+    sfRectangleShape* rect_c;
 
     sfSprite* sprites[31];
 

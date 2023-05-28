@@ -39,7 +39,7 @@ int disp_split(sfRenderWindow *w, maps_t *map, anime_t *ani, sfView *view, int t
     return 0;
 }
 
-int free_destroy(sfRenderWindow *window, maps_t *maps, anime_t *anime)
+/*int free_destroy(sfRenderWindow *window, maps_t *maps, anime_t *anime)
 {
     sfSprite_destroy(maps->sprite);
     sfTexture_destroy(maps->texture);
@@ -48,7 +48,7 @@ int free_destroy(sfRenderWindow *window, maps_t *maps, anime_t *anime)
     sfRenderWindow_destroy(window);
     free(maps);
     free(anime);
-}
+}*/
 
 int display_window(sfEvent event)
 {
@@ -72,6 +72,6 @@ int display_window(sfEvent event)
         }
         disp_split(window, maps, animation, view, test);
     }
-    free_destroy(window, maps, animation);
+    //free_destroy(window, maps, animation);
     return 0;
 }
