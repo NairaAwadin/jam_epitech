@@ -21,7 +21,7 @@ int all_set(maps_t *maps, anime_t *anim, sfView *view)
     return 0;
 }
 
-int disp_split(sfRenderWindow *w, maps_t *map, anime_t *ani, sfView *view, int test)
+int disp_split(sfRenderWindow *w, maps_t *map, anime_t *ani, sfView *view, int test, my_rpg *rpg)
 {
     sfRenderWindow_clear(w, sfWhite);
     sfRenderWindow_setView(w, view);
@@ -37,6 +37,20 @@ int disp_split(sfRenderWindow *w, maps_t *map, anime_t *ani, sfView *view, int t
     sfRenderWindow_drawSprite(w, map->sprite, NULL);
     sfRenderWindow_drawSprite(w, map->sprite_hoppy, NULL);
     animation_on_key(ani, w);
+    rpg->text_timer = sfText_create();
+    sfText_setFont(rpg->text_timer, rpg->font_timer);
+    sfText_setCharacterSize(rpg->text_timer, 30);
+    sfText_setFillColor(rpg->text_timer, sfRed);
+    sfTime elapsedTime = sfClock_getElapsedTime(rpg->clock_timer);
+    float seconds = sfTime_asSeconds(elapsedTime);
+    char timeString[50];
+    sprintf(timeString, "Temps écoulé : %.2f secondes", seconds);
+    sfText_setString(rpg->text_timer, timeString);
+    sfRenderWindow_drawText(w, rpg->text_timer, NULL);
+    if (sfTime_asSeconds(elapsedTime) >= sfTime_asSeconds(rpg->timer)) {
+        printf("Game over!\n");
+        sfRenderWindow_close(w);
+    }
     sfRenderWindow_display(w);
     return 0;
 }
@@ -54,9 +68,6 @@ int free_destroy(sfRenderWindow *window, maps_t *maps, anime_t *anime)
 
 int display_window(my_rpg *rpg, sfRenderWindow *window)
 {
-    /*sfVideoMode mode = {1920, 1080, 32};
-    sfRenderWindow *window;
-    window = sfRenderWindow_create(mode, "...", sfResize | sfClose, NULL);*/
     anime_t *animation = NULL;
     maps_t *maps = NULL;
     int test = 0;
@@ -65,6 +76,9 @@ int display_window(my_rpg *rpg, sfRenderWindow *window)
     animation = init_anime();
     maps = init_maps_s();
     all_set(maps, animation, view);
+    rpg->clock_timer = sfClock_create();
+    rpg->timer = sfSeconds(15);
+    rpg->font_timer = sfFont_createFromFile("assets/Macaroni.ttf");
     while (sfRenderWindow_isOpen(window)) {
         if (while_for_display(window, rpg->event, view, animation) == 1) {
             test = 1;
@@ -72,7 +86,7 @@ int display_window(my_rpg *rpg, sfRenderWindow *window)
         if (while_for_display(window, rpg->event, view, animation) == 2) {
             test = 2;
         }
-        disp_split(window, maps, animation, view, test);
+        disp_split(window, maps, animation, view, test, rpg);
     }
     //free_destroy(window, maps, animation);
      return 0;

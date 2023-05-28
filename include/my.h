@@ -66,6 +66,11 @@ typedef struct my_rpg_s {
 
     sfSprite* sprites[31];
 
+    sfFont* font_timer;
+    sfText* text_timer;
+    sfClock* clock_timer;
+    sfTime timer;
+
     sfEvent event;
 
 }my_rpg;
