@@ -62,6 +62,17 @@ void menu(my_rpg *rpg)
     window = sfRenderWindow_create(video_mode, "Where is Hoppy ?",
     sfResize | sfClose, NULL);
 
+    rpg->music = sfMusic_createFromFile("assets/music.ogg");
+    sfMusic_setLoop(rpg->music, sfTrue);
+    sfMusic_play(rpg->music);
+
     loading_menu_sprite(rpg);
+    principale_loop_menu(rpg, window);
+}
+
+void sd_menu(my_rpg *rpg, sfRenderWindow* window)
+{
+    loading_menu_sprite(rpg);
+
     principale_loop_menu(rpg, window);
 }

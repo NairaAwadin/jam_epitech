@@ -12,12 +12,24 @@
     #define MY_H_
 
 typedef struct my_rpg_s {
-    //sfTexture* texture;
-    //sfSprite* sprite;
+    sfTexture* texture;
+    sfSprite* sprite;
+
+    sfTexture* texture1;
+    sfSprite* sprite1;
 
     sfText* text_game;
+    sfFloatRect click_button_setting;
     sfFloatRect click_button_exit;
     sfFloatRect click_button_play;
+    sfFloatRect click_button_credits;
+    sfFloatRect click_less;
+    sfFloatRect click_plus;
+    sfFloatRect click_home;
+    sfFloatRect click_home1;
+
+
+    sfMusic* music;
 
     sfTexture* text_button_play;
     sfSprite* button_play;
@@ -35,6 +47,23 @@ typedef struct my_rpg_s {
     sfSprite* button_credits;
     sfRectangleShape* rect_c;
 
+    sfTexture* text_plus;
+    sfSprite* plus;
+
+    sfTexture* text_less;
+    sfSprite* less;
+
+    sfTexture* text_set_menu;
+    sfSprite* set_menu;
+    sfTexture* text_crd_menu;
+    sfSprite* crd_menu;
+
+    sfTexture* text_home_butt;
+    sfSprite* home_button;
+
+    sfTexture* text_home_butt1;
+    sfSprite* home_button1;
+
     sfSprite* sprites[31];
 
     sfEvent event;
@@ -44,5 +73,8 @@ typedef struct my_rpg_s {
 void menu(my_rpg *rpg);
 void loading_menu_sprite(my_rpg *rpg);
 void menu_mouse_event(my_rpg *rpg, sfRenderWindow* window);
-int display_window(sfEvent event);
+void sd_menu(my_rpg *rpg, sfRenderWindow* window);
+int display_window(my_rpg *rpg, sfRenderWindow *window);
+int open_setting_menu(my_rpg *rpg, sfRenderWindow* window);
+int open_credits_menu(my_rpg *rpg, sfRenderWindow* window);
 #endif

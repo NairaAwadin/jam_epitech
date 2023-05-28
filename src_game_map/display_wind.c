@@ -5,6 +5,7 @@
 ** window
 */
 #include "my_map.h"
+#include "my.h"
 
 int all_set(maps_t *maps, anime_t *anim, sfView *view)
 {
@@ -51,11 +52,11 @@ int free_destroy(sfRenderWindow *window, maps_t *maps, anime_t *anime)
     free(anime);
 }
 
-int display_window(sfEvent event)
+int display_window(my_rpg *rpg, sfRenderWindow *window)
 {
-    sfVideoMode mode = {1920, 1080, 32};
+    /*sfVideoMode mode = {1920, 1080, 32};
     sfRenderWindow *window;
-    window = sfRenderWindow_create(mode, "...", sfResize | sfClose, NULL);
+    window = sfRenderWindow_create(mode, "...", sfResize | sfClose, NULL);*/
     anime_t *animation = NULL;
     maps_t *maps = NULL;
     int test = 0;
@@ -65,14 +66,14 @@ int display_window(sfEvent event)
     maps = init_maps_s();
     all_set(maps, animation, view);
     while (sfRenderWindow_isOpen(window)) {
-        if (while_for_display(window, event, view, animation) == 1) {
+        if (while_for_display(window, rpg->event, view, animation) == 1) {
             test = 1;
         }
-        if (while_for_display(window, event, view, animation) == 2) {
+        if (while_for_display(window, rpg->event, view, animation) == 2) {
             test = 2;
         }
         disp_split(window, maps, animation, view, test);
     }
-    free_destroy(window, maps, animation);
+    //free_destroy(window, maps, animation);
      return 0;
 }

@@ -58,6 +58,5 @@ int sprite_dis(sfEvent event, sfRenderWindow *window);
 int while_for_display(sfRenderWindow *window, sfEvent event,
 sfView *view, anime_t *animation);
 int animation_on_key(anime_t *animation, sfRenderWindow *window);
-int display_window(sfEvent event);
 int test_rect_coll(sfEvent event, sfRenderWindow *window);
 #endif

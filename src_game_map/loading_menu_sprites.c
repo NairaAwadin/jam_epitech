@@ -61,7 +61,7 @@ sfRectangleShape_setPosition(rpg->rect_c, (sfVector2f){42, 950});
 
 void loading_menu_sprite(my_rpg *rpg)
 {
-    /*rpg->music = sfMusic_createFromFile("wondrous-waters-119518.ogg");
+    /*rpg->music = sfMusic_createFromFile("assets/music.ogg");
     sfMusic_setLoop(rpg->music, sfTrue);
     sfMusic_play(rpg->music);*/
 
